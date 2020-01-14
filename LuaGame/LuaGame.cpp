@@ -1,6 +1,20 @@
 // LuaGame.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-#include <Windows.h>
+
+//	Very epic skrillex beep boop thing
+//	#include <Windows.h>
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		Beep(i * 10, 100);
+//	}
+//	Wow, Picasso, that you?
+//	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+//	for (int k = 1; k < 255; k++)
+//	{
+//		// pick the colorattribute k you want
+//		SetConsoleTextAttribute(hConsole, k);
+//		std::cout << k << " I want to be nice today!" << std::endl;
+//	}
 
 extern "C" 
 {
@@ -11,9 +25,6 @@ extern "C"
 
 #include <iostream>
 #include <string>
-
-
-
 #include "LuaWrapper.h"
 
 struct Player
@@ -38,12 +49,6 @@ int createPlayer(lua_State* pLuaState)
 int main()
 {
 	LUA::LuaWrapper::GetInstance()->Initialize();
-
-	for (int i = 0; i < 100; ++i)
-	{
-		Beep(i * 10, 100);
-	}
-
 
 	LUA::LuaWrapper* pInstance = LUA::LuaWrapper::GetInstance();
 	pInstance->LoadScript("LUA.lua");
