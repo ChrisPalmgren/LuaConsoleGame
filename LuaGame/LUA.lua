@@ -19,7 +19,7 @@ option2B = "B) Ask how he is.\n"
 
 function Event1()
 	value = EnterDialouge(dialouge1, option1A, option1B)
-	print(value)
+	value = EnterDialouge(dialouge2, option2A, option2B)
 end
 	--print(value)
 	--[[value = EnterDialouge(dialouge1, option1, option2)

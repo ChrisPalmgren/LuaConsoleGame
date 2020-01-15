@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Events">
+      <UniqueIdentifier>{a4b0ead1-c1f9-4d42-acd1-18a378743493}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LuaGame.cpp">
@@ -31,5 +34,10 @@
     <ClInclude Include="LuaWrapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Events\Event1.lua">
+      <Filter>Source Files\Events</Filter>
+    </None>
   </ItemGroup>
 </Project>
