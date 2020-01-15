@@ -35,7 +35,7 @@
       <Filter>Source Files\Events</Filter>
     </None>
     <None Include="Event2.lua">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Events</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

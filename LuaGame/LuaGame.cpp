@@ -53,7 +53,7 @@ int dialouge_opt3(lua_State* pLuaState)
 
 int NextEvent(lua_State* pLuaState)
 {
-	std::cout << lua_tostring(pLuaState, -1) << std::endl;
+	//std::cout << lua_tostring(pLuaState, -1) << std::endl;
 	const char* pFilename = lua_tostring(pLuaState, -1);
 	LUA::LuaWrapper::GetInstance()->LoadScript( (char*)pFilename );
 	LUA::LuaWrapper::GetInstance()->RunFunction("Event()");
@@ -71,7 +71,7 @@ bool EndGameEvent()
 		//	std::cout << lua_tostring(pLuaState, -1); // option2
 		std::cout << "You are ending the game!" << std::endl << std::endl;
 		std::cout << "A) Restart." << std::endl;
-		std::cout << "b) Quit." << std::endl;
+		std::cout << "B) Quit." << std::endl;
 		std::cin >> v;
 		//	lua_pushstring(pLuaState, v);
 		if (v[0] == 'a')
@@ -101,14 +101,13 @@ int main()
 		LUA::LuaWrapper::GetInstance()->Initialize();
 		LUA::LuaWrapper* pInstance = LUA::LuaWrapper::GetInstance();
 
-		pInstance->LoadScript("Start.lua");
+		pInstance->LoadScript("Events/Event1.lua");
 
 		pInstance->RegisterFunction("EnterDialouge", dialouge_opt2);
-		//pInstance->RegisterFunction("EnterDialouge", dialouge_opt3);
-		//pInstance->RegisterFunction("NextEvent", NextEvent);
+		pInstance->RegisterFunction("NextEvent", NextEvent);
 		pInstance->RunFunction("Event()");
+		//pInstance->RegisterFunction("EnterDialouge", dialouge_opt3);
+		//pInstance->RunFunction("Event()");
 		EndGameEvent();
 	}
-
-	system("pause");
 }
