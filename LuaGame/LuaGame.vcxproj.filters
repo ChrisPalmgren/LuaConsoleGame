@@ -26,11 +26,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="LUA.lua">
-      <Filter>Source Files</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="LuaWrapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -39,5 +34,13 @@
     <None Include="Events\Event1.lua">
       <Filter>Source Files\Events</Filter>
     </None>
+    <None Include="Event2.lua">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Start.lua">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

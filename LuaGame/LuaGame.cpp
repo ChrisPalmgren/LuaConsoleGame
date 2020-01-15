@@ -56,52 +56,58 @@ int NextEvent(lua_State* pLuaState)
 	std::cout << lua_tostring(pLuaState, -1) << std::endl;
 	const char* pFilename = lua_tostring(pLuaState, -1);
 	LUA::LuaWrapper::GetInstance()->LoadScript( (char*)pFilename );
+	LUA::LuaWrapper::GetInstance()->RunFunction("Event()");
 	return 0;
 }
-
+bool gLoop = true;
 bool EndGameEvent()
 {
 	bool corrChar = false;
 	while (corrChar == false)
 	{
 		char v[32];
-		std::cout << "[Incoming LUA Dialogue] Game Over.. Loser. / You Win!" << std::endl << std::endl;// lua_tostring(pLuaState, -3); // dialouge
-		std::cout << "[Incoming LUA Opt1] A) Restart" << std::endl;// lua_tostring(pLuaState, -2); // option1
-		std::cout << "[Incoming LUA Opt2] B) Quit" << std::endl;// lua_tostring(pLuaState, -1); // option2
+		//	std::cout << lua_tostring(pLuaState, -3); // dialouge
+		//	std::cout << lua_tostring(pLuaState, -2); // option1
+		//	std::cout << lua_tostring(pLuaState, -1); // option2
+		std::cout << "You are ending the game!" << std::endl << std::endl;
+		std::cout << "A) Restart." << std::endl;
+		std::cout << "b) Quit." << std::endl;
 		std::cin >> v;
-		std::cout << v;
-		//lua_pushstring(pLuaState, v);
+		//	lua_pushstring(pLuaState, v);
 		if (v[0] == 'a')
 		{
 			system("cls");
-			corrChar = true;
-			return true;
+			gLoop = true;
+			return gLoop;
+			// return true;
 		}
 		else if (v[0] == 'b')
 		{
 			system("cls");
-			corrChar = true;
-			return false;
+			gLoop = false;
+			return gLoop;
+			// return false;
 		}
 		else
 			system("cls");
 	}
+	return 0;
 }
 
 int main()
 {
-	bool gLoop = true;
 	while (gLoop == true)
 	{
 		LUA::LuaWrapper::GetInstance()->Initialize();
 		LUA::LuaWrapper* pInstance = LUA::LuaWrapper::GetInstance();
 
-		pInstance->LoadScript("LUA.lua");
+		pInstance->LoadScript("Start.lua");
 
 		pInstance->RegisterFunction("EnterDialouge", dialouge_opt2);
-		pInstance->RunFunction("Event1()");
-
-		gLoop = EndGameEvent();
+		//pInstance->RegisterFunction("EnterDialouge", dialouge_opt3);
+		//pInstance->RegisterFunction("NextEvent", NextEvent);
+		pInstance->RunFunction("Event()");
+		EndGameEvent();
 	}
 
 	system("pause");

@@ -160,12 +160,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="LUA.lua" />
+    <Text Include="Start.lua" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LuaWrapper.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Event2.lua" />
     <None Include="Events\Event1.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
