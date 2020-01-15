@@ -46,6 +46,25 @@ int createPlayer(lua_State* pLuaState)
 	return 1;
 }
 
+int dialouge(lua_State* pLuaState)
+{
+	char v[32];
+	std::cout << lua_tostring(pLuaState, -3); // dialouge
+	std::cout << lua_tostring(pLuaState, -2); // option1
+	std::cout << lua_tostring(pLuaState, -1); // option2
+	std::cin >> v;
+	lua_pushstring(pLuaState, v);
+	return 1;
+}
+
+int NextEvent(lua_State* pState)
+{
+	std::cout << lua_tostring(pState, -1) << std::endl;
+	const char* pFilename = lua_tostring(pState, -1);
+	LUA::LuaWrapper::GetInstance()->LoadScript( (char*)pFilename );
+	return 0;
+}
+
 int main()
 {
 	LUA::LuaWrapper::GetInstance()->Initialize();
@@ -53,8 +72,10 @@ int main()
 	LUA::LuaWrapper* pInstance = LUA::LuaWrapper::GetInstance();
 	pInstance->LoadScript("LUA.lua");
 
-	//pInstance->RegisterFunction("CreatePlayer", createPlayer);
+	pInstance->RegisterFunction("EnterDialouge", dialouge);
 	pInstance->RunFunction("Event1()");
+
+
 
 	system("pause");
 }

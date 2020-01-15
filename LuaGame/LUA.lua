@@ -1,64 +1,28 @@
-
---player = {}
---player["Name"] = "Blip Blop"
---player["Origin"] = "Shcrubashnuba"
---player["Level"] = 10
---[[
-
-creationData = { 
-	WorldName = "",
-
-}
-
-x = 2
-
-player = {}
-player[0] = { Name = "Blip Blop", Origin = "Shcrubashnuba", Level = 10 }
---player[1] = { Name = "Dibdib", Origin = "FrebbleShnebble", Level = 20 }
-
-function GetPlayer(n)
-	print("[LUA] Function is called.\n")
-	return player[n]
-end]]
-
---[[function init()
-	print(CreatePlayer(11,"kim"))
-	print("Welcome!")
-	name = io.read()
-	print( "hello, ", name )	
-end]]
-
---OpenOffice = "Program"
---Time = 1400
-
---[[hej = function(x)
-	return x
-end]]
-
---Event1 = 1
---Event2 = 2
---Event3 = 3
---Event4 = 4
-
 will = 40
+value = 0;
 
-dialouge1 = "Player wakes up with no memory.\n	Description of hospital room and yourself.\nThere is a knock on the door.\n"
-option1 = "sound"
-option2 = "close door"
+YouWin = "You Win!\n\n"
+optionWinA = "A) Restart.\n"
+optionWinB = "B) Quit.\n"
 
+GameOver = "Game Over.\n\n"
+optionLoseA = "A) Restart.\n"
+optionLoseB = "B) Quit.\n"
 
-int dialouge(lua)
-{
-	std::cout<<lua_tostring(lua,-3); // dialouge
-	std::cout<<lua_tostring(lua,-2); // option1
-	std::cout<<lua_tostring(lua,-1); // option2
-	std::cin>>v;
-	lua_pushnumber(lua,v);
-	return 1;
-}
+dialouge1 = "Player wakes up with no memory.\nDescription of hospital room and yourself.\nThere is a knock on the door.\n\n"
+option1A = "A) Say nothing.\n"
+option1B = "B) 'Come in.'\n"
+
+dialouge2 = "Husband comes in.\n\n"
+option2A = "A) Ask how you ended up here.\n"
+option2B = "B) Ask how he is.\n"
 
 function Event1()
-	value = EnterDialouge(dialouge1, option1, option2)
+	value = EnterDialouge(dialouge1, option1A, option1B)
+	print(value)
+end
+	--print(value)
+	--[[value = EnterDialouge(dialouge1, option1, option2)
 	if value == 1 then
 		RoomA.BurnDown()
 	else
@@ -82,6 +46,4 @@ function Event1()
 			end
 	end
 
-	value = EnterDialouge(dialouge2, option21, option22)
-
-end
+	value = EnterDialouge(dialouge2, option21, option22)]]
