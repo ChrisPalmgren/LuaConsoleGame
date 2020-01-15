@@ -22,35 +22,77 @@ extern "C"
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include "LuaWrapper.h"
 
 int dialouge_opt2(lua_State* pLuaState)
 {
-	bool corrKey = true;
-	char v[32];
-	std::cout << lua_tostring(pLuaState, -3); // dialouge
-	std::cout << lua_tostring(pLuaState, -2); // option1
-	std::cout << lua_tostring(pLuaState, -1); // option2
-	std::cin >> v;
-	lua_pushstring(pLuaState, v);
-	system("cls");
+	bool corrChar = false;
+	while (corrChar == false)
+	{
+		char v[32];
+		std::cout << lua_tostring(pLuaState, -3); // dialouge
+		std::cout << lua_tostring(pLuaState, -2); // option1
+		std::cout << lua_tostring(pLuaState, -1); // option2
+		std::cin >> v;
+		if (v[0] == 'a')
+		{
+			lua_pushstring(pLuaState, v);
+			corrChar = true;
+			system("cls");
+		}
+		else if (v[0] == 'b')
+		{
+			lua_pushstring(pLuaState, v);
+			corrChar = true;
+			system("cls");
+		}
+		else
+		{
+			corrChar = false;
+			system("cls");
+		}
+	}
 	return 1;
 }
 
 int dialouge_opt3(lua_State* pLuaState)
 {
-	bool corrKey = true;
-	char v[32];
-	std::cout << lua_tostring(pLuaState, -4); // dialouge
-	std::cout << lua_tostring(pLuaState, -3); // option1
-	std::cout << lua_tostring(pLuaState, -2); // option2
-	std::cout << lua_tostring(pLuaState, -1); // option3
-	std::cin >> v;
-	lua_pushstring(pLuaState, v);
-	system("cls");
+	bool corrChar = false;
+	while (corrChar == false)
+	{
+		char v[32];
+		std::cout << lua_tostring(pLuaState, -4); // dialouge
+		std::cout << lua_tostring(pLuaState, -3); // option1
+		std::cout << lua_tostring(pLuaState, -2); // option2
+		std::cout << lua_tostring(pLuaState, -1); // option3
+		std::cin >> v;
+		if (v[0] == 'a')
+		{
+			lua_pushstring(pLuaState, v);
+			corrChar = true;
+			system("cls");
+		}
+		else if (v[0] == 'b')
+		{
+			lua_pushstring(pLuaState, v);
+			corrChar = true;
+			system("cls");
+		}
+		else if (v[0] == 'c')
+		{
+			lua_pushstring(pLuaState, v);
+			corrChar = true;
+			system("cls");
+		}
+		else
+		{
+			corrChar = false;
+			system("cls");
+		}
+	}
 	return 1;
 }
-
 int NextEvent(lua_State* pLuaState)
 {
 	//std::cout << lua_tostring(pLuaState, -1) << std::endl;
@@ -106,8 +148,7 @@ int main()
 		pInstance->RegisterFunction("EnterDialouge", dialouge_opt2);
 		pInstance->RegisterFunction("NextEvent", NextEvent);
 		pInstance->RunFunction("Event()");
-		//pInstance->RegisterFunction("EnterDialouge", dialouge_opt3);
-		//pInstance->RunFunction("Event()");
+
 		EndGameEvent();
 	}
 }
