@@ -31,19 +31,25 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Start.lua">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Events\Event1.lua">
       <Filter>Source Files\Events</Filter>
     </None>
-    <None Include="Event2.lua">
+    <None Include="Events\Event2.lua">
       <Filter>Source Files\Events</Filter>
     </None>
     <None Include="Events\Event3.lua">
       <Filter>Source Files\Events</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Start.lua">
-      <Filter>Source Files</Filter>
-    </Text>
+    <None Include="Events\Event4_A.lua">
+      <Filter>Source Files\Events</Filter>
+    </None>
+    <None Include="Events\Event4_B.lua">
+      <Filter>Source Files\Events</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -166,9 +166,11 @@
     <ClInclude Include="LuaWrapper.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Event2.lua" />
     <None Include="Events\Event1.lua" />
+    <None Include="Events\Event2.lua" />
     <None Include="Events\Event3.lua" />
+    <None Include="Events\Event4_A.lua" />
+    <None Include="Events\Event4_B.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
