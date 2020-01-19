@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Events">
       <UniqueIdentifier>{a4b0ead1-c1f9-4d42-acd1-18a378743493}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\NewEvents">
+      <UniqueIdentifier>{9db7ce0f-e839-4e98-9a22-4efd34f62ca8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LuaGame.cpp">
@@ -50,6 +53,144 @@
     </None>
     <None Include="Events\Event4_B.lua">
       <Filter>Source Files\Events</Filter>
+    </None>
+    <None Include="NewEvents\Event1.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event2.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event3.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event4_A.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event4_B.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event5.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event6.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event7.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event8.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event9.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event10.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event11.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event12.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event13.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event14.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event15.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event16.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event17.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event18.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event19.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event20.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event21.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event22.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event23.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event24.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event25.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event26.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event27.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event28.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event29.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event30.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event31.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event32.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event33.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event34.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event35.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event36.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event37.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event38.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event39.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event40.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event41.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event42.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event43.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event44.lua">
+      <Filter>Source Files\NewEvents</Filter>
+    </None>
+    <None Include="NewEvents\Event45.lua">
+      <Filter>Source Files\NewEvents</Filter>
     </None>
   </ItemGroup>
 </Project>

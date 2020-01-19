@@ -1,18 +1,12 @@
 dialouge1 = "[Insert very epic gametitle.]\n\n"
 
-option1A = "A) plAy\n"
-option1B = "B) Quit\n"
-
-dialouge2 = "Husband comes in.\n\n"
-option2A = "A) Ask how you ended up here.\n"
-option2B = "B) Ask how he is.\n"
+option1A = "plAy\n"
 
 function Event()
-	value = EnterDialouge(dialouge1, option1A, option1B)
-	if value == 'a' then
+	value = EnterDialouge1(dialouge1, option1A)
+	if value == 0.0 then
 		NextEvent("Events/Event1.lua")
-	elseif value == 'b' then
-	end
+		end
 end
 	--print(value)
 	--[[value = EnterDialouge(dialouge1, option1, option2)
