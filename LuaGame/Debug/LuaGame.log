@@ -1,0 +1,8 @@
+﻿  LuaWrapper.cpp
+c:\users\chripalm\desktop\code\rpg\luagame\luagame\luawrapper.h(39): warning C4244: 'initializing': conversion from 'LUA::lua_Number' to 'int', possible loss of data
+  LuaGame.cpp
+c:\users\chripalm\desktop\code\rpg\luagame\luagame\luawrapper.h(39): warning C4244: 'initializing': conversion from 'lua_Number' to 'int', possible loss of data
+c:\users\chripalm\desktop\code\rpg\luagame\luagame\luagame.cpp(205): warning C4101: 'v': unreferenced local variable
+  Generating Code...
+  LuaGame.vcxproj -> C:\Users\chripalm\Desktop\Code\RPG\LuaGame\Debug\LuaGame.exe
+  LuaGame.vcxproj -> C:\Users\chripalm\Desktop\Code\RPG\LuaGame\Debug\LuaGame.pdb (Full PDB)

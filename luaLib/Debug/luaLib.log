@@ -1,0 +1,42 @@
+﻿  wmain.c
+  lzio.c
+  lvm.c
+  lutf8lib.c
+  lundump.c
+  luac.c
+  lua.c
+  ltm.c
+  ltablib.c
+  ltable.c
+  lstrlib.c
+  lstring.c
+  lstate.c
+  lparser.c
+  loslib.c
+  lopcodes.c
+  lobject.c
+  loadlib.c
+  lmem.c
+  lmathlib.c
+  Generating Code...
+  Compiling...
+  llex.c
+  liolib.c
+  linit.c
+  lgc.c
+  lfunc.c
+  ldump.c
+  ldo.c
+  ldebug.c
+  ldblib.c
+  lctype.c
+  lcorolib.c
+  lcode.c
+  lbitlib.c
+  lbaselib.c
+  lauxlib.c
+  lapi.c
+c:\users\chripalm\desktop\code\rpg\luagame\lualib\lapi.c(398): warning C4244: 'return': conversion from 'lua_Unsigned' to 'std::size_t', possible loss of data
+  Generating Code...
+lua.obj : warning LNK4006: _main already defined in luac.obj; second definition ignored
+  luaLib.vcxproj -> C:\Users\chripalm\Desktop\Code\RPG\LuaGame\Debug\luaLib.lib

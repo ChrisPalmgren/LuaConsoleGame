@@ -1,0 +1,11 @@
+Event30 = "You leap with all of your might and as you hit the rough ground, there is pain for a split second and then darkness covers your eyes.\nThe dark around you turns into a whirlwind of purple and red and you are in the center of it. Swallowed by the whirlwind, you see.... yourself?\nThousands upon thousands of copies of you are spireling around you rapidly; chaotically.\nYou look up and there, floating in the air, is your car and the bloated corpse of your partner is sitting in the driver's seat.\nHis dead body lifts one arm and waves at you. Welcome back, honey.\nI guess it didn't go well this time either. Why don't you get in and tell me about it?\nYou float up to him as you've done so many times before, and get in the passenger seat.\nYou close the door and look at your partner and retell everything.\nYou need to stop blaming yourself, honey. I'll be here, but I really don't want to see you in this place again.\nIt really is a horrible memory you have manifested. Now, get out of here and give it another try!\n\n"
+Option1 = "Give it another try."
+
+function Event()
+    print("Event: 30\n")
+    value = EnterDialouge1(Event30, Option1)
+	life = CheckPoint()
+    NextEvent("NewEvents/Event8.lua")
+end
+
+--THIS IS WILL-RELATED

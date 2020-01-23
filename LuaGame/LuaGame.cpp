@@ -13,9 +13,9 @@
 //		std::cout << k << " I want to be nice today!" << std::endl;
 //	}
 
-#define KEY_UP 72       //Up arrow character
-#define KEY_DOWN 80    //Down arrow character
-#define KEY_ENTER '\r'//Enter key charatcer
+#define KEY_UP 72
+#define KEY_DOWN 80
+#define KEY_ENTER '\r'
 
 extern "C" 
 {
@@ -29,9 +29,10 @@ extern "C"
 #include <string>
 #include "LuaWrapper.h"
 
-int Will = 0;
+int Will = 40;
 char c;
 
+// WILL (HEALTH) FUNCTIONS
 int GetWill(lua_State* pLuaState)
 {
 	lua_pushnumber(pLuaState, Will);
@@ -51,30 +52,27 @@ int LoseWill(lua_State* pLuaState)
 	return 1;
 }
 
-//		ARROW SELECTING METHOD 1
+// ARROW SELECTION FUNCTIONS
 int dialouge_opt1(lua_State* pLuaState)
 {
-	bool corrChar = false;
-	char selected = 0;		//Keeps track of which option is selected.
-	int numChoices = 1;		//The number of choices we have.
-	bool selecting = true;	//True if we are still waiting for the user to press enter.
+	char selected = 0;
+	int numChoices = 1;
+	bool selecting = true;
 	char c;
 
-	//char v[32];
-	std::string dialogue = lua_tostring(pLuaState, -2); // dialouge
+	std::string dialogue = lua_tostring(pLuaState, -2); // Dialogue
+	std::string opt1 = lua_tostring(pLuaState, -1); // Option 1
 
-	std::string opt1 = lua_tostring(pLuaState, -1);
-
-	while (selecting == true) //As long as we are selecting...
+	while (selecting == true)
 	{
 		std::cout << "Will: " << Will << std::endl << std::endl;
 		std::cout << dialogue;
 		std::cout << ">> " + opt1 + " <<" << std::endl;
 
-		switch ((c = _getch())) // Check value of the last inputed character.
+		switch (c = _getch())
 		{
 		case KEY_ENTER:
-			selecting = false; // We are done selecting the option.
+			selecting = false;
 			break;
 		default:
 			break;
@@ -85,22 +83,18 @@ int dialouge_opt1(lua_State* pLuaState)
 	return 1;
 }
 
-//		ARROW SELECTING METHOD 2
 int dialouge_opt2(lua_State* pLuaState)
 {
-	bool corrChar = false;
-	char selected = 0;		//Keeps track of which option is selected.
-	int numChoices = 2;		//The number of choices we have.
-	bool selecting = true;	//True if we are still waiting for the user to press enter.
+	char selected = 0;
+	int numChoices = 2;
+	bool selecting = true;
 	char c;
 
-	//char v[32];
-	std::string dialogue = lua_tostring(pLuaState, -3); // dialouge
+	std::string dialogue = lua_tostring(pLuaState, -3); // Dialogue
+	std::string opt1 = lua_tostring(pLuaState, -2); // Option 1
+	std::string opt2 = lua_tostring(pLuaState, -1); // Option 2
 
-	std::string opt1 = lua_tostring(pLuaState, -2);
-	std::string opt2 = lua_tostring(pLuaState, -1);
-
-	while (selecting == true) //As long as we are selecting...
+	while (selecting == true)
 	{
 		std::cout << "Will: " << Will << std::endl << std::endl;
 		std::cout << dialogue;
@@ -114,16 +108,16 @@ int dialouge_opt2(lua_State* pLuaState)
 			std::cout << "  " + opt1 << std::endl;
 			std::cout << ">> " + opt2 + " <<" << std::endl;
 		}
-		switch ((c = _getch()) ) // Check value of the last inputed character.
+		switch (c = _getch())
 		{
 		case KEY_UP:
-			if (selected > 0) --selected; // Dont decrement if we are at the first option.
+			if (selected > 0) --selected;
 			break;
 		case KEY_DOWN:
-			if (selected < numChoices - 1) ++selected; // Dont increment if we are at the last option.
+			if (selected < numChoices - 1) ++selected;
 			break;
 		case KEY_ENTER:
-			selecting = false; // We are done selecting the option.
+			selecting = false;
 			break;
 		default:
 			break;
@@ -134,23 +128,19 @@ int dialouge_opt2(lua_State* pLuaState)
 	return 1;
 }
 
-//		ARROW SELECTING METHOD 3
 int dialouge_opt3(lua_State* pLuaState)
 {
-	bool corrChar = false;
-	char selected = 0;		//Keeps track of which option is selected.
-	int numChoices = 3;		//The number of choices we have.
-	bool selecting = true;	//True if we are still waiting for the user to press enter.
+	char selected = 0;
+	int numChoices = 3;
+	bool selecting = true;
 	char c;
 
-	//char v[32];
-	std::string dialogue = lua_tostring(pLuaState, -4); // dialouge
+	std::string dialogue = lua_tostring(pLuaState, -4); // Dialogue
+	std::string opt1 = lua_tostring(pLuaState, -3); // Option 1
+	std::string opt2 = lua_tostring(pLuaState, -2); // Option 2
+	std::string opt3 = lua_tostring(pLuaState, -1); // Option 3
 
-	std::string opt1 = lua_tostring(pLuaState, -3);
-	std::string opt2 = lua_tostring(pLuaState, -2);
-	std::string opt3 = lua_tostring(pLuaState, -1);
-
-	while (selecting == true) //As long as we are selecting...
+	while (selecting == true)
 	{
 		std::cout << "Will: " << Will << std::endl << std::endl;
 		std::cout << dialogue;
@@ -172,16 +162,16 @@ int dialouge_opt3(lua_State* pLuaState)
 			std::cout << "  " + opt2 << std::endl;
 			std::cout << ">> " + opt3 + " <<" << std::endl;
 		}
-		switch ((c = _getch())) // Check value of the last inputed character.
+		switch (c = _getch())
 		{
 		case KEY_UP:
-			if (selected > 0) --selected; // Dont decrement if we are at the first option.
+			if (selected > 0) --selected;
 			break;
 		case KEY_DOWN:
-			if (selected < numChoices - 1) ++selected; // Dont increment if we are at the last option.
+			if (selected < numChoices - 1) ++selected;
 			break;
 		case KEY_ENTER:
-			selecting = false; // We are done selecting the option.
+			selecting = false;
 			break;
 		default:
 			break;
@@ -191,6 +181,53 @@ int dialouge_opt3(lua_State* pLuaState)
 	}
 	return 1;
 }
+
+// CHANGE PAGE FUNCTION
+int NextEvent(lua_State* pLuaState)
+{
+	const char* pFilename = lua_tostring(pLuaState, -1);
+	LUA::LuaWrapper::GetInstance()->LoadScript( (char*)pFilename );
+	LUA::LuaWrapper::GetInstance()->RunFunction("Event()");
+	return 0;
+}
+bool gLoop = true;
+
+int main()
+{
+	while (gLoop == true)
+	{
+		LUA::LuaWrapper::GetInstance()->Initialize();
+		LUA::LuaWrapper* pInstance = LUA::LuaWrapper::GetInstance();
+
+		bool corrChar = false;
+		while (corrChar == false)
+		{
+			char v[32];
+			std::cout << "[Insert very epic gametitle.]\n\n";
+			std::cout << "plAy\n";
+			switch (c = _getch())
+			{
+			case 'a': case 'A':
+				pInstance->LoadScript("NewEvents/Event1.lua");
+				corrChar = true;
+				system("cls");
+				break;
+			default:
+				system("cls");
+			}
+		}
+
+		pInstance->RegisterFunction("EnterDialouge1", dialouge_opt1);
+		pInstance->RegisterFunction("EnterDialouge", dialouge_opt2);
+		pInstance->RegisterFunction("EnterDialouge3", dialouge_opt3);
+		pInstance->RegisterFunction("GetLife", GetWill);
+		pInstance->RegisterFunction("Restore", RestoreWill);
+		pInstance->RegisterFunction("NextEvent", NextEvent);
+		pInstance->RegisterFunction("CheckPoint", LoseWill);
+		pInstance->RunFunction("Event()");
+	}
+}
+
 
 //		CHAR SELECTING METHOD
 //int dialouge_opt1(lua_State* pLuaState)
@@ -218,7 +255,6 @@ int dialouge_opt3(lua_State* pLuaState)
 //	return 1;
 //}
 
-//		CHAR SELECTING METHOD
 // int dialouge_opt2(lua_State* pLuaState)
 //{
 //	bool corrChar = false;
@@ -289,85 +325,3 @@ int dialouge_opt3(lua_State* pLuaState)
 //	}
 //	return 1;
 //}
-
-int NextEvent(lua_State* pLuaState)
-{
-	//std::cout << lua_tostring(pLuaState, -1) << std::endl;
-	const char* pFilename = lua_tostring(pLuaState, -1);
-	LUA::LuaWrapper::GetInstance()->LoadScript( (char*)pFilename );
-	LUA::LuaWrapper::GetInstance()->RunFunction("Event()");
-	return 0;
-}
-bool gLoop = true;
-
-bool EndGameEvent()
-{
-	bool corrChar = false;
-	while (corrChar == false)
-	{
-		char v[32];
-		//	std::cout << lua_tostring(pLuaState, -3); // dialouge
-		//	std::cout << lua_tostring(pLuaState, -2); // option1
-		//	std::cout << lua_tostring(pLuaState, -1); // option2
-		std::cout << "You are ending the game!" << std::endl << std::endl;
-		std::cout << "A) Restart." << std::endl;
-		std::cout << "B) Quit." << std::endl;
-		std::cin >> v;
-		//	lua_pushstring(pLuaState, v);
-		if (v[0] == 'a' || v[0] == 'A')
-		{
-			system("cls");
-			gLoop = true;
-			return gLoop;
-			// return true;
-		}
-		else if (v[0] == 'b' || v[0] == 'B')
-		{
-			system("cls");
-			gLoop = false;
-			return gLoop;
-			// return false;
-		}
-		else
-			system("cls");
-	}
-	return 0;
-}
-
-int main()
-{
-	while (gLoop == true)
-	{
-		LUA::LuaWrapper::GetInstance()->Initialize();
-		LUA::LuaWrapper* pInstance = LUA::LuaWrapper::GetInstance();
-
-		bool corrChar = false;
-		while (corrChar == false)
-		{
-			char v[32];
-			std::cout << "[Insert very epic gametitle.]\n\n";
-			std::cout << "plAy\n";
-			switch (c = _getch())
-			{
-			case 'a': case 'A':
-				pInstance->LoadScript("NewEvents/Event1.lua");
-				corrChar = true;
-				system("cls");
-				break;
-			default:
-				system("cls");
-			}
-		}
-
-		pInstance->RegisterFunction("EnterDialouge1", dialouge_opt1);
-		pInstance->RegisterFunction("EnterDialouge", dialouge_opt2);
-		pInstance->RegisterFunction("EnterDialouge3", dialouge_opt3);
-		pInstance->RegisterFunction("GetLife", GetWill);
-		pInstance->RegisterFunction("Restore", RestoreWill);
-		pInstance->RegisterFunction("NextEvent", NextEvent);
-		pInstance->RegisterFunction("CheckPoint", LoseWill);
-		pInstance->RunFunction("Event()");
-
-		//EndGameEvent();
-	}
-}
